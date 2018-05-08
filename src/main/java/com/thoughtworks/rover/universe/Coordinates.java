@@ -14,6 +14,10 @@ public class Coordinates {
         return new Coordinates(this.xCoordinate + xCoordinateStepValue, this.yCoordinate + yCoordinateStepValue);
     }
 
+    public Coordinates newCoordinatesForStepSize(final int xCoordinateStepValue, final int yCoordinateStepValue) {
+        return new Coordinates(xCoordinate+xCoordinateStepValue, yCoordinate+yCoordinateStepValue);
+    }
+
     @Override
     public String toString() {
         StringBuilder coordinateOutput = new StringBuilder();
@@ -47,8 +51,6 @@ public class Coordinates {
         return xCoordinate <= this.xCoordinate;
     }
 
-    public Coordinates newCoordinatesForStepSize(final int xCoordinateStepValue, final int yCoordinateStepValue) {
-        return new Coordinates(xCoordinate+xCoordinateStepValue, yCoordinate+yCoordinateStepValue);
-    }
+
 
 }
