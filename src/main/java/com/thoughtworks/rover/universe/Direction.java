@@ -58,6 +58,17 @@ public enum Direction {
         this.stepSizeOnYAxis = stepSizeOnYAxis;
     }
 
+    public static Direction getByCode(String code) {
+        if (code == null) return null;
+        switch (code) {
+            case "N": return Direction.N;
+            case "S": return Direction.S;
+            case "E": return Direction.E;
+            case "W": return Direction.W;
+            default: return null;
+        }
+    }
+
     public abstract Direction right();
     public abstract Direction left();
 
