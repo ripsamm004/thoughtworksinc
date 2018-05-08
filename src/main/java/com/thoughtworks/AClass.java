@@ -23,7 +23,7 @@ public class AClass {
         Coordinates startingPosition;
         MarsRover marsRover;
 
-        // Maximum boundary of the coordinate
+        // Maximum boundary of the plateau
         if ((line = input.readLine()) != null) {
             String[] parts = line.split(" ");
             _x1 = Integer.parseInt(parts[0]);
