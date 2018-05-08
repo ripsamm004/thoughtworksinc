@@ -6,34 +6,15 @@ import com.thoughtworks.rover.universe.Direction;
 import com.thoughtworks.rover.universe.Plateau;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class AClass {
-
-    /*public static void main(String args[]) {
-        //Given
-        Plateau plateau = new Plateau(5,5);
-        Coordinates startingPosition = new Coordinates(1,9);
-
-        //When
-        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
-
-        //then
-        System.out.println(marsRover.currentLocation());
-
-        marsRover.run("LMLMLMLMM");
-
-        System.out.println(marsRover.currentLocation());
-
-    }*/
-
-
 
     /***********************************************************************
     * Process a stream of commands and respond with a stream of status strings.
     * The input and output formats are specified in the INPUT and OUTPUT section
     * of the comments at the start of this source file
     */
+
     static void processCommandStream(BufferedReader input, BufferedWriter output) throws IOException {
         String line;
         int _x1 = 0, _y1 = 0;  	// Coordinates of top right of boundary
