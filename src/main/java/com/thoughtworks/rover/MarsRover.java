@@ -13,12 +13,14 @@ public class MarsRover {
     private Coordinates currentCoordinates;
     private Direction currentDirection;
     private Plateau plateau;
+    //private boolean isLive;
 
 
     public MarsRover(final Plateau plateau, final Direction direction, final Coordinates coordinates) {
         this.plateau = plateau;
         this.currentDirection = direction;
         this.currentCoordinates = coordinates;
+        //this.isLive = true;
     }
 
     public void run(final String commandString) {
@@ -41,10 +43,20 @@ public class MarsRover {
     }
 
     public void move() {
-        Coordinates positionAfterMove = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
+        //if(isLive) {
+            Coordinates positionAfterMove = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
 
-        //ignores the command if rover is being driven off plateau
-        if(plateau.hasWithinBounds(positionAfterMove))
-            currentCoordinates = currentCoordinates.newCoordinatesFor(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
+            //ignores the command if rover is being driven off plateau
+            if (plateau.hasWithinBounds(positionAfterMove))
+                currentCoordinates = currentCoordinates.newCoordinatesFor(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
+            /*else {
+                isLive = false;
+                currentCoordinates = currentCoordinates.newCoordinatesFor(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
+            }*/
+        //}
     }
+
+    /*public boolean getIsLive(){
+        return isLive;
+    }*/
 }
