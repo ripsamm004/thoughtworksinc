@@ -10,10 +10,26 @@ import java.io.*;
 public class AClass {
 
     /***********************************************************************
-    * Process a stream of commands and respond with a stream of status strings.
-    * The input and output formats are specified in the INPUT and OUTPUT section
-    * of the comments at the start of this source file
-    */
+     *  Program entry point
+     * 	Processes a stream of rover commands as described in processCommandStream()
+     * 	Reads input from stdin and writes output to stdout
+     */
+    public static void main(String[] args) throws IOException {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
+        try {
+            processCommandStream(input, output);
+        } finally {
+            input.close();
+            output.close();
+        }
+    }
+
+    /***********************************************************************
+     * Process a stream of commands and respond with a stream of status strings.
+     * The input and output formats are specified in the INPUT and OUTPUT section
+     * of the comments at the start of this source file
+     */
 
     static void processCommandStream(BufferedReader input, BufferedWriter output) throws IOException {
         String line;
@@ -50,22 +66,6 @@ public class AClass {
                 output.write(marsRover.currentLocation() + '\n') ;
                 output.flush();
             }
-        }
-    }
-
-    /***********************************************************************
-     * Program entry point
-     * 	Processes a stream of rover commands as described in processCommandStream()
-     * 	Reads input from stdin and writes output to stdout
-     */
-    public static void main(String[] args) throws IOException {
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
-        try {
-            processCommandStream(input, output);
-        } finally {
-            input.close();
-            output.close();
         }
     }
 
