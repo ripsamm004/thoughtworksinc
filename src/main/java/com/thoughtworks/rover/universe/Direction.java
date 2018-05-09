@@ -59,20 +59,10 @@ public enum Direction {
     }
 
     public static Direction getByCode(String code) {
-        /*if (code == null) return null;
-        switch (code) {
-            case "N": return Direction.N;
-            case "S": return Direction.S;
-            case "E": return Direction.E;
-            case "W": return Direction.W;
-            default: return null;
-        }*/
-
-
         if (code == null) return null;
-        for(Direction ec : values()) {
+        for(Direction direction : values()) {
             if( (code).equalsIgnoreCase(code)){
-                return ec;
+                return direction;
             }
         }
 
