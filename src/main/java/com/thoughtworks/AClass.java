@@ -34,6 +34,7 @@ public class AClass {
 
         while (line != null) {
             if ((line = input.readLine()) != null) {
+                if(line.trim().length()<1) break;
 
                 String[] parts = line.split(" ");
                 _x = Integer.parseInt(parts[0]);
